@@ -20,9 +20,9 @@ export default function PageLayout ({children, className}) {
                 </div>
                 <footer className="page-footer">
                     <div>
-                    <a href="#">courses</a>{' | '}
-                    <a href="#">github</a>{' | '}
-                    <a href="#">facebook</a>
+                    <a href="https://www.linkedin.com/in/sjurbjorndalseter/">linkedin</a>{' | '}
+                    <a href="https://github.com/kodehode">github</a>{' | '}
+                    <a href="https://twitter.com/sjur">twitter</a>
                     </div>
                 </footer>
             </Container>
