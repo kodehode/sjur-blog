@@ -8,8 +8,23 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/client": "^1.149.18",
+    "@sanity/image-url": "^0.140.19",
+    "bootstrap": "^4.5.0",
+    "highlight.js": "^10.0.3",
+    "jquery": "^1.9.1",
+    "moment": "^2.27.0",
     "next": "9.4.4",
+    "popper.js": "^1.16.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "16.13.1",
+    "react-toggle": "^4.1.1",
+    "sass": "^1.26.10",
+    "swr": "^0.2.2"
   }
 }
