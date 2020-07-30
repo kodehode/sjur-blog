@@ -19,6 +19,16 @@ library.add(
     faSortNumericDown, 
     faSortNumericUp);
 
+import { 
+    faLinkedin,
+    faGithubSquare,
+    faFacebookSquare} from '@fortawesome/free-brands-svg-icons';
+
+library.add(
+    faLinkedin,
+    faGithubSquare,
+    faFacebookSquare);
+
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'highlight.js/styles/darcula.css';

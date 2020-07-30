@@ -14,12 +14,12 @@ const FilteringMenu = ({onChange, filter}) => {
                 icon={LIST_VIEW_ICONS[filter.view.list]}
                 onClick={() => 
                 onChange('view', {list: +!filter.view.list})} />
-                <FontAwesomeIcon
-                    className="clickable hoverable"
-                    size="2x"
-                    icon={DATE_FILTERING_ICONS[filter.date.asc]}
-                    onClick={() => 
-                    onChange('date', {asc: +!filter.date.asc})} />
+            <FontAwesomeIcon
+                className="clickable hoverable"
+                size="2x"
+                icon={DATE_FILTERING_ICONS[filter.date.asc]}
+                onClick={() => 
+                onChange('date', {asc: +!filter.date.asc})} />
         </div>
     )
 }

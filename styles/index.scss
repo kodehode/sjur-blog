@@ -56,6 +56,8 @@ html, body {
   
     .card-main-title {
       font-size: 22px;
+      height: 60px;
+
     }
   
     .card-header {
@@ -235,6 +237,10 @@ html, body {
     margin-bottom: 10px;
     text-align: center;
 
+    > img {
+      max-width: 100%;
+    }
+
     &-left {
       float: left;
       margin-right: '30px';
@@ -396,4 +402,32 @@ html, body {
         }
       }
     }
+  }
+
+  .view.overlay {
+    height: 200px;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      margin: 0;
+  
+      > img {
+        object-fit: cover;
+        height: 100%;
+      }
+  }
+  
+  
+  blockquote {
+    position: relative;
+      color: #999;
+      font-size: 1.25em;
+      font-family: Georgia,Times New Roman,Times,serif;
+      font-style: italic;
+      margin: 0;
+      padding: .5em .5em .5em 0.5em;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-origin: border-box;
+      background-size: 2em;
   }

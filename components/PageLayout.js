@@ -1,15 +1,13 @@
-import { Container } from 'react-bootstrap';
-import Head from 'next/head';
+import { Container} from 'react-bootstrap';
 import Navbar from './Navbar';
 import { useTheme } from 'providers/ThemeProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faTwitterSquare, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 
 export default function PageLayout ({children, className}) {
     const { theme, toggleTheme } = useTheme();
     return (
         <div className={theme.type}>
-            <Head>
-            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet" />
-            </Head>
             <Container>
                 <Navbar 
                     theme={theme}
@@ -20,9 +18,24 @@ export default function PageLayout ({children, className}) {
                 </div>
                 <footer className="page-footer">
                     <div>
-                    <a href="https://www.linkedin.com/in/sjurbjorndalseter/">linkedin</a>{' | '}
-                    <a href="https://github.com/kodehode">github</a>{' | '}
-                    <a href="https://twitter.com/sjur">twitter</a>
+                        <a href="https://www.linkedin.com/in/sjurbjorndalseter/">
+                            <FontAwesomeIcon
+                                className="clickable hoverable mr-3"
+                                size="2x"
+                                icon={faLinkedin} />
+                        </a>{' '}
+                        <a href="https://github.com/kodehode">
+                            <FontAwesomeIcon
+                                className="clickable hoverable mr-3"
+                                size="2x"
+                                icon={faGithubSquare} />
+                        </a>{' '}
+                        <a href="https://twitter.com/sjur">
+                            <FontAwesomeIcon
+                                className="clickable hoverable mr-3"
+                                size="2x"
+                                icon={faTwitterSquare} />
+                        </a>
                     </div>
                 </footer>
             </Container>
