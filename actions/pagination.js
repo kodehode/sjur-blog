@@ -25,7 +25,7 @@ const BlogList = ({blogs, filter}) => {
                 }}/>
             </Col>
             :
-            <Col key={blog.slag} md="6" lg="4">
+            <Col key={blog.slug} md="6" lg="4">
             <CardItem 
                 author={blog.author}
                 title={blog.title} 
@@ -51,7 +51,7 @@ export const useGetBlogsPage = ({blogs, filter}) => {
             const { data: paginatedBlogs, error } = withSWR(useGetBlogs({offset, filter}));
 
             if (!offset && !paginatedBlogs && !error) {
-                return <BlogList blogs={blogs} filter={filter} />
+                return <BlogList blogs={blogs} filter={filter} key={`paginated-blog-list`} />
             }
             
             if (!paginatedBlogs) {
@@ -59,7 +59,7 @@ export const useGetBlogsPage = ({blogs, filter}) => {
                     .fill(0)
                     .map((_, i) =>
                         !filter.view.list ?
-                        <Col key={i} md="9">
+                        <Col key={`${i}-list-item`} md="9">
                             <CardListItemBlank />
                         </Col>
                         :
