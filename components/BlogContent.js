@@ -1,4 +1,4 @@
-
+import Image from 'next/image';
 import BlockContent from '@sanity/block-content-to-react';
 import HighlightCode from 'components/HighlightCode';
 import { urlFor } from 'lib/api';
@@ -16,7 +16,12 @@ const serializers = {
         image: ({node: {asset, alt, position = 'center'}}) => {
             return (
                 <div className={`blog-image blog-image-${position}`}>
-                    <img src={urlFor(asset).height(300).fit('max').url()} />
+                    {/* <img src={urlFor(asset).height(300).fit('max').url()} /> */}
+                    <Image 
+                        src={urlFor(asset).url()} 
+                        width={500 * asset.metadata.dimensions.width / asset.metadata.dimensions.height} //<user-chosen height> * original width / original height
+                        height="500"  
+                        layout="intrinsic" />
                     <div className="image-alt">{alt}</div>
                 </div>
             )
