@@ -19,9 +19,10 @@ const serializers = {
                     {/* <img src={urlFor(asset).height(300).fit('max').url()} /> */}
                     <Image 
                         src={urlFor(asset).url()} 
-                        width={500 * asset.metadata.dimensions.width / asset.metadata.dimensions.height} //<user-chosen height> * original width / original height
+                        width={500 * asset.metadata.dimensions.width / asset.metadata.dimensions.height}
                         height="500"  
-                        layout="intrinsic" />
+                        layout="intrinsic"
+                        alt={alt} />
                     <div className="image-alt">{alt}</div>
                 </div>
             )

@@ -1,13 +1,18 @@
+import Head from "next/head";
+
 import { Container} from 'react-bootstrap';
 import Navbar from './Navbar';
 import { useTheme } from 'providers/ThemeProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitterSquare, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 
-export default function PageLayout ({children, className}) {
+export default function PageLayout ({children, className, pagetitle}) {
     const { theme, toggleTheme } = useTheme();
     return (
         <div className={theme.type}>
+            <Head>
+                <title>{pagetitle}</title>
+            </Head>
             <Container>
                 <Navbar 
                     theme={theme}
@@ -22,19 +27,22 @@ export default function PageLayout ({children, className}) {
                             <FontAwesomeIcon
                                 className="clickable hoverable mr-3"
                                 size="2x"
-                                icon={faLinkedin} />
+                                icon={faLinkedin}
+                                title="Linkedin" />
                         </a>{' '}
                         <a href="https://github.com/kodehode">
                             <FontAwesomeIcon
                                 className="clickable hoverable mr-3"
                                 size="2x"
-                                icon={faGithubSquare} />
+                                icon={faGithubSquare}
+                                title="GitHub" />
                         </a>{' '}
                         <a href="https://twitter.com/sjur">
                             <FontAwesomeIcon
                                 className="clickable hoverable mr-3"
                                 size="2x"
-                                icon={faTwitterSquare} />
+                                icon={faTwitterSquare}
+                                title="Twitter" />
                         </a>
                     </div>
                 </footer>

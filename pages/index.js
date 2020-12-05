@@ -27,7 +27,7 @@ export default function Home ({blogs, preview}) {
   } = useGetBlogsPage({blogs, filter});
   
   return (
-    <PageLayout>
+    <PageLayout pagetitle="Home - 7r.no">
       { preview && <PreviewAlert />}
       <AuthorIntro />
       <FilteringMenu 

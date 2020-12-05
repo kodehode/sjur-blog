@@ -26,14 +26,14 @@ const BlogDetail = ({blog, preview}) => {
     }
 
     return (
-        <PageLayout className="blog-detail-page">
+        <PageLayout className="blog-detail-page" pagetitle={blog.title}>
             <Row>
                 <Col md={{ span: 10, offset: 1 }}>
                     { preview && <PreviewAlert />}
                 <BlogHeader 
                     title={blog.title}
                     subtitle={blog.subtitle}
-                    coverImage={urlFor(blog.coverImage).height(600).url()}
+                    coverImage={urlFor(blog.coverImage).width("1820").url()}
                     author={blog.author}
                     date={moment(blog.date).format('LL')}
                 />
