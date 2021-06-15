@@ -6,6 +6,7 @@ import { Row, Col } from 'react-bootstrap';
 import { urlFor } from 'lib/api';
 import moment from 'moment';
 import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
 
 import BlogContent from 'components/BlogContent';
 import PreviewAlert from 'components/PreviewAlert';
@@ -14,7 +15,7 @@ const BlogDetail = ({blog, preview}) => {
     const router = useRouter();
 
     if (!router.isFallback && !blog?.slug) {
-        return <ErrorPae statusCode="404" />
+        return <ErrorPage statusCode="404" />
     }
 
     if (router.isFallback) {

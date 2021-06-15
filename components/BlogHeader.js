@@ -20,7 +20,8 @@ const BlogHeader = ({title, subtitle, coverImage, date, author}) => {
             <Image
                 src={coverImage}
                 width="910"
-                height={910 * height / width}  />
+                height={910 * height / width}
+                alt=""  />
         </div>
     )
 }

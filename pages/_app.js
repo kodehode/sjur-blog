@@ -35,7 +35,8 @@ import 'highlight.js/styles/darcula.css';
 import "react-toggle/style.css";
 import 'styles/index.scss';
 
-export default ({Component, pageProps}) => 
+const AppExport = ({Component, pageProps}) => 
     <ThemeProvider>
         <Component {...pageProps} />
-    </ThemeProvider>
+    </ThemeProvider>;
+export default AppExport;

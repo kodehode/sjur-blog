@@ -19,10 +19,12 @@ const serializers = {
                     {/* <img src={urlFor(asset).height(300).fit('max').url()} /> */}
                     <Image 
                         src={urlFor(asset).url()} 
+                        blurDataURL={asset.metadata.lqip}
                         width={500 * asset.metadata.dimensions.width / asset.metadata.dimensions.height}
                         height="500"  
                         layout="intrinsic"
-                        alt={alt} />
+                        alt={alt} 
+                        placeholder="blur"/>
                     <div className="image-alt">{alt}</div>
                 </div>
             )
