@@ -1,12 +1,50 @@
 import { useState } from 'react';
-import { Row, Button } from 'react-bootstrap';
+import { Row, Button, Col } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 import FilteringMenu from 'components/FilteringMenu';
 import PreviewAlert from 'components/PreviewAlert';
 
+import CardItem from 'components/CardItem';
+import CardItemBlank from 'components/CardItemBlank';
+import CardListItem from 'components/CardListItem';
+import CardListItemBlank from 'components/CardListItemBlank';
+import moment from 'moment';
+
 import { useGetBlogsPage } from 'actions/pagination';
 import { getPaginatedBlogs } from 'lib/api';
+
+// TODO: Separate into stand alone component
+const BlogList = ({data, filter}) => {
+  return data.map(page => page.map(blog =>
+      !filter.view.list ?
+          <Col key={`${blog.slug}-list`} md="9">
+          <CardListItem 
+              author={blog.author}
+              title={blog.title} 
+              subtitle={blog.subtitle}
+              date={moment(blog.date).format('LL')}
+              link={{
+              href: '/blogs/[slug]',
+              as: `/blogs/${blog.slug}`
+              }}/>
+          </Col>
+          :
+          <Col key={blog.slug} md="6" lg="4">
+          <CardItem 
+              author={blog.author}
+              title={blog.title} 
+              subtitle={blog.subtitle}
+              date={moment(blog.date).format('LL')}
+              image={blog.coverImage}
+              link={{
+              href: '/blogs/[slug]',
+              as: `/blogs/${blog.slug}`
+              }}
+              />
+          </Col>
+        ))
+    }
 
 
 export default function Home ({blogs, preview}) {
@@ -20,10 +58,7 @@ export default function Home ({blogs, preview}) {
       isReachingEnd: is true when we loaded all of the data, data is empty (array) */
   
   const {
-    pages,
-    isLoadingMore,
-    isReachingEnd,
-    loadMore
+    data, size, setSize, hitEnd, isValidating
   } = useGetBlogsPage({blogs, filter});
   
   return (
@@ -38,15 +73,32 @@ export default function Home ({blogs, preview}) {
         />
       <hr/>
       <Row className="mb-5">
-        {pages}
+        <BlogList 
+          data={data || [blogs]}
+          filter={filter}
+        />
+        { isValidating &&
+          Array(3)
+          .fill(0)
+          .map((_, i) =>
+              !filter.view.list ?
+              <Col key={`${i}-list-item`} md="9">
+                  <CardListItemBlank />
+              </Col>
+              :
+              <Col key={`${i}-item`} md="6" lg="4">
+                  <CardItemBlank />
+              </Col>
+          )
+        }
       </Row>
       <div style={{textAlign: 'center'}}>
         <Button
-          onClick={loadMore}
-          disabled={isReachingEnd || isLoadingMore}
+          onClick={() => setSize(size + 1)}
+          disabled={hitEnd}
           size="lg"
           variant="outline-secondary">
-          {isLoadingMore ? '...': isReachingEnd ? 'No more blogs' : 'More Blogs'}
+          Load more
         </Button>
       </div>
     </PageLayout>
