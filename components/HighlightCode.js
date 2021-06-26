@@ -4,9 +4,11 @@ import { createRef, useEffect } from 'react';
 import { findDOMNode } from 'react-dom';
 
 const HighlightCode = ({children, language}) => {
+    
     const code = createRef();
 
     useEffect(() => {
+        // eslint-disable-next-line
         highlight.highlightBlock(findDOMNode(code.current));
     }, [])
 
@@ -19,7 +21,6 @@ const HighlightCode = ({children, language}) => {
             </code>
         </pre>
     )
-
 }
 
 export default HighlightCode;

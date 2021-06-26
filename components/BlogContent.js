@@ -5,7 +5,7 @@ import { urlFor } from 'lib/api';
 
 const serializers = {
     types: {
-        code: ({node: {language, code, filename}}) => {
+        code: function SerializeCode({node: {language, code, filename}}) {
             return (
                 <HighlightCode language={language}>
                     {code}
@@ -13,7 +13,7 @@ const serializers = {
                 </HighlightCode>
             )
         },
-        image: ({node: {asset, alt, position = 'center'}}) => {
+        image: function SerializeImage({node: {asset, alt, position = 'center'}}) {
             return (
                 <div className={`blog-image blog-image-${position}`}>
                     {/* <img src={urlFor(asset).height(300).fit('max').url()} /> */}
