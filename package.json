@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "lint": "next lint",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -19,7 +20,7 @@
     "highlight.js": "^10.0.3",
     "jquery": "^3.6.0",
     "moment": "^2.27.0",
-    "next": "^11.0.0",
+    "next": "^11.1.0",
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.0.1",
