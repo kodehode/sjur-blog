@@ -9,7 +9,7 @@ const HighlightCode = ({children, language}) => {
 
     useEffect(() => {
         // eslint-disable-next-line
-        highlight.highlightBlock(findDOMNode(code.current));
+        highlight.highlightElement(findDOMNode(code.current));
     }, [])
 
     return (

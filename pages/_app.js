@@ -31,7 +31,7 @@ library.add(
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'highlight.js/styles/darcula.css';
+import 'highlight.js/styles/base16/darcula.css';
 import "react-toggle/style.css";
 import 'styles/index.scss';
 
