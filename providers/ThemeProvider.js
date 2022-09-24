@@ -5,11 +5,11 @@ import { useState, useContext, useMemo } from 'react';
 const ThemeProvider = ({children}) => {
     const [theme, setTheme] = useState(themes.dark);
 
-    const toggleTheme = () => {
+    function toggleTheme() {
         setTheme(theme === themes.dark
             ? themes.light
-            : themes.dark 
-        )
+            : themes.dark
+        );
     }
 
     const themeAPI = useMemo(() => {

@@ -17,7 +17,7 @@ const AuthorIntro = () =>
             <Media.Body>
                 <h5 className="font-weight-bold mb-0">Hello,</h5>
                 <p className="welcome-text">
-                My name is Sjur. I am a project/product manager and general technology enthusiast.
+            my name is Sjur. I&apos;m a interested in product development, technology, gadgets, food, science... well, lots of stuff.
                 And this is a blog app I built to explore react/next/sanity. Not to blog.
                 </p>
             </Media.Body>

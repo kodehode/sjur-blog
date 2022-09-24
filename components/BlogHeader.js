@@ -6,12 +6,19 @@ const BlogHeader = ({title, subtitle, coverImage, date, author}) => {
     return (
         <div className="blog-detail-header">
             <p className="lead mb-0">
-            <img
+            <Image
+                src={author?.avatar}
+                className="rounded-circle mr-3"
+                layout='fixed'
+                height="50px"
+                width="50px"
+                alt="avatar"/>
+            {/* <img
                 src={author?.avatar}
                 className="rounded-circle mr-3"
                 height="50px"
                 width="50px"
-                alt="avatar"/>
+                alt="avatar"/> */}
             {author?.name}
             {', '} {date}
             </p>

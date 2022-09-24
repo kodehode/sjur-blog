@@ -30,19 +30,20 @@ html, body {
       background-color: #fff;
       border-radius: 15px;
       box-shadow: 2px 5px 25px rgba(0, 0, 0, .15);
-      min-height: 280px;
+      min-height: 350px;
       position: relative;
       z-index: 2;
       padding: 20px;
       padding-bottom: 20px;
 
       &.no-image {
-        min-height: auto;
+        min-height: 350px;
       }
     }
   
     .card-body {
       padding: 15px 0px 0px;
+      min-height: 170px;
   
       .card-title {
         font-weight: bold;
