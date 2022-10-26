@@ -1,11 +1,11 @@
 
-import { useSWRInfinite } from 'swr';
+import useSWR from 'swr';
 import { getBlogs } from 'actions';
 
 
 export const useGetBlogsPage = ({filter}) => {
 
-    const resutls = useSWRInfinite(
+    const resutls = useSWR(
         (index, previousPageData) => {
             if (index === 0) {
                 return `/api/blogs?date=${filter.date.asc ? 'asc' : 'desc'}`;
