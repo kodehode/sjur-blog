@@ -10,8 +10,8 @@ const BlogHeader = ({title, subtitle, coverImage, date, author}) => {
                 src={author?.avatar}
                 className="rounded-circle mr-3"
                 layout='fixed'
-                height="50px"
-                width="50px"
+                height="50"
+                width="50"
                 alt="avatar"/>
             {/* <img
                 src={author?.avatar}

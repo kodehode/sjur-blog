@@ -45,9 +45,9 @@ const CardItem = ({title, subtitle, date, image, author, link, mode = 'normal'})
                             <hr style={{width: 'calc(100% + 40px)', marginLeft: '-20px'}} />
                             {link &&
                             <Link {...link}>
-                                <a>
+                                
                                     Read More
-                                </a>
+                                
                             </Link>
                             }
                         </>
@@ -55,7 +55,7 @@ const CardItem = ({title, subtitle, date, image, author, link, mode = 'normal'})
                 </Card.Body>
             </div>
             </Card>
-    )
+    );
 }
 
 
