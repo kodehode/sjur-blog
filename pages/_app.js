@@ -1,5 +1,7 @@
 import { Component } from "react";
 
+import { Analytics } from '@vercel/analytics/react';
+
 import ThemeProvider from 'providers/ThemeProvider';
 import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { 
@@ -38,5 +40,6 @@ import 'styles/index.scss';
 const AppExport = ({Component, pageProps}) => 
     <ThemeProvider>
         <Component {...pageProps} />
+        <Analytics />
     </ThemeProvider>;
 export default AppExport;
