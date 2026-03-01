@@ -1,21 +1,20 @@
 
 import highlight from 'highlight.js';
-import { createRef, useEffect } from 'react';
-import { findDOMNode } from 'react-dom';
+import { useEffect, useRef } from 'react';
 
 const HighlightCode = ({children, language}) => {
-    
-    const code = createRef();
+    const codeRef = useRef(null);
 
     useEffect(() => {
-        // eslint-disable-next-line
-        highlight.highlightElement(findDOMNode(code.current));
-    }, [])
+        if (codeRef.current) {
+            highlight.highlightElement(codeRef.current);
+        }
+    }, [children, language])
 
     return (
         <pre>
             <code
-                ref={code}
+                ref={codeRef}
                 className={language}>
                     {children}
             </code>
