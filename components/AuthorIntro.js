@@ -1,5 +1,6 @@
 
-import { Row, Col, Image } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Image from 'next/image';
 
 const AuthorIntro = () =>
     <Row>
@@ -7,12 +8,11 @@ const AuthorIntro = () =>
             {/* AUTHOR INTRO STARTS */}
             <div className="mb-4 admin-intro d-flex">
                 <Image
-                    roundedCircle
                     width={64}
                     height={64}
-                    className="me-3"
+                    className="me-3 rounded-circle"
                     src="https://cdn.sanity.io/images/24vijzsz/production/f0a62a485e3f5ab63178900038dbb98f7562f194-800x800.jpg"
-                    alt="Generic placeholder"
+                    alt="Sjur profile image"
                 />
                 <div>
                     <h5 className="fw-bold mb-0">Hello,</h5>

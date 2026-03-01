@@ -2,16 +2,18 @@ import Image from 'next/image';
 
 
 const BlogHeader = ({title, subtitle, coverImage, date, author}) => {
-    const [width, height] = coverImage.match(/[^.-]+(?=\.(jpe?g|png|gif|jpeg|webp))/)[0].split("x");
+    const [width, height] = coverImage
+        .match(/[^.-]+(?=\.(jpe?g|png|gif|jpeg|webp))/)[0]
+        .split('x')
+        .map(Number);
     return (
         <div className="blog-detail-header">
             <p className="lead mb-0">
             <Image
                 src={author?.avatar}
                 className="rounded-circle mr-3"
-                layout='fixed'
-                height="50"
-                width="50"
+                height={50}
+                width={50}
                 alt="avatar"/>
             {/* <img
                 src={author?.avatar}
@@ -26,9 +28,9 @@ const BlogHeader = ({title, subtitle, coverImage, date, author}) => {
             <h2 className="blog-detail-header-subtitle mb-3">{subtitle}</h2>
             <Image
                 src={coverImage}
-                width="910"
-                height={910 * height / width}
-                alt=""  />
+                width={910}
+                height={Math.round((910 * height) / width)}
+                alt={title ? `Cover image for ${title}` : 'Cover image'} />
         </div>
     )
 }

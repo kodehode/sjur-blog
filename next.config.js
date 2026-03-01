@@ -5,6 +5,17 @@ module.exports = {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID
   },
   images: {
-    domains: ['cdn.sanity.io','via.placeholder.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        pathname: '/**',
+      },
+    ],
   }
 }

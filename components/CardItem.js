@@ -2,7 +2,6 @@
 import { Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { urlFor } from 'lib/api';
-import Image from 'next/image';
 
 const CardItem = ({title, subtitle, date, image, author, link, mode = 'normal'}) => {
     return (
@@ -14,7 +13,7 @@ const CardItem = ({title, subtitle, date, image, author, link, mode = 'normal'})
                         <div className="image-placeholder" />
                         :
                         image &&
-                        <a href={link.as}>
+                        <Link {...link}>
                             <Card.Img
                                 src={
                                     urlFor(image)
@@ -24,7 +23,7 @@ const CardItem = ({title, subtitle, date, image, author, link, mode = 'normal'})
                                         .url()}
                                 alt="Card image cap"
                             />
-                        </a>
+                        </Link>
                     }
                 </div>
                 <Card.Body>

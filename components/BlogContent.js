@@ -14,16 +14,16 @@ const serializers = {
             )
         },
         image: function SerializeImage({node: {asset, alt, position = 'center'}}) {
+            const imageWidth = Math.round((500 * asset.metadata.dimensions.width) / asset.metadata.dimensions.height);
             return (
                 <div className={`blog-image blog-image-${position}`}>
                     {/* <img src={urlFor(asset).height(300).fit('max').url()} /> */}
                     <Image 
                         src={urlFor(asset).url()} 
                         blurDataURL={asset.metadata.lqip}
-                        width={500 * asset.metadata.dimensions.width / asset.metadata.dimensions.height}
-                        height="500"  
-                        layout="intrinsic"
-                        alt={alt} 
+                        width={imageWidth}
+                        height={500}
+                        alt={alt || 'Blog image'} 
                         placeholder="blur"/>
                     <div className="image-alt">{alt}</div>
                 </div>

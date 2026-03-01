@@ -17,7 +17,10 @@ const BlogNavbar = ({theme, toggleTheme}) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
-                  <ThemeToggle onChange={toggleTheme} />
+                  <ThemeToggle
+                    checked={theme.type === 'light'}
+                    onChange={toggleTheme}
+                  />
               <Nav.Link
                   as={() =>
                       <Link href='/' className="fj-navbar-item fj-navbar-link">
