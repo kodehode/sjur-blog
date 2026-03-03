@@ -1,16 +1,16 @@
-import Toggle from "react-toggle";
+import Form from "react-bootstrap/Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ThemeToggle = ({ onChange, checked }) =>
-<label>
-  <Toggle
+const ThemeToggle = ({ onChange, checked }) => (
+  <Form.Check
+    type="switch"
+    id="theme-switch"
     className="day-night-toggle"
     checked={checked}
-    icons={{
-      checked: <FontAwesomeIcon inverse icon="sun" />,
-      unchecked: <FontAwesomeIcon inverse icon="moon" />
-    }}
-    onChange={onChange} />
-</label>
+    onChange={onChange}
+    aria-label="Toggle theme"
+    label={<FontAwesomeIcon inverse icon={checked ? "sun" : "moon"} />}
+  />
+);
 
 export default ThemeToggle;
