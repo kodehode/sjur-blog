@@ -2,7 +2,9 @@ import { Nav, Navbar } from 'react-bootstrap';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 
-const BlogNavbar = ({theme, toggleTheme}) => {
+const SHOW_THEME_TOGGLE = true;
+
+const BlogNavbar = ({theme, toggleTheme, showThemeToggle = SHOW_THEME_TOGGLE}) => {
     return (
         <Navbar
           variant={theme.type}
@@ -17,10 +19,12 @@ const BlogNavbar = ({theme, toggleTheme}) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
-                  <ThemeToggle
-                    checked={theme.type === 'light'}
-                    onChange={toggleTheme}
-                  />
+                  {showThemeToggle && (
+                      <ThemeToggle
+                        checked={theme.type === 'light'}
+                        onChange={toggleTheme}
+                      />
+                  )}
               <Nav.Link
                   as={() =>
                       <Link href='/' className="fj-navbar-item fj-navbar-link">
