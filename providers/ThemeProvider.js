@@ -12,6 +12,8 @@ const ThemeProvider = ({children}) => {
 
         const savedThemeType = window.localStorage.getItem('theme');
         if (savedThemeType === themes.dark.type || savedThemeType === themes.light.type) {
+            // Browser preferences are unavailable during server-side rendering.
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setTheme(themes[savedThemeType]);
             return;
         }
